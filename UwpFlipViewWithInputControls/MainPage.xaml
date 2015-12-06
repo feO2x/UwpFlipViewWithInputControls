@@ -13,6 +13,7 @@
         <StackPanel Orientation="Horizontal">
             <Button Content="Flip View with Images" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithImages" />
             <Button Content="Flip View with Input Controls" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithInputControls" />
+            <Button Content="Fixed Flip View with Input Controls" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithInputControlsFixed" />
         </StackPanel>
         <ContentControl Grid.Row="1" x:Name="CurrentView" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
     </Grid>

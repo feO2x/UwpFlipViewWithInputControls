@@ -105,6 +105,9 @@
     <Compile Include="ExampleViews\FlipViewWithInputControls.xaml.cs">
       <DependentUpon>FlipViewWithInputControls.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExampleViews\FlipViewWithInputControlsFixed.xaml.cs">
+      <DependentUpon>FlipViewWithInputControlsFixed.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\FlipViewWithInputControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExampleViews\FlipViewWithInputControlsFixed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
