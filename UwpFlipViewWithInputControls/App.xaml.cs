@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LightInject;
+using System;
 using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -10,6 +11,8 @@ namespace UwpFlipViewWithInputControls
 {
     sealed partial class App
     {
+        private ServiceContainer _diContainer;
+
         public App()
         {
             InitializeComponent();
@@ -18,35 +21,30 @@ namespace UwpFlipViewWithInputControls
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
 #if DEBUG
             if (Debugger.IsAttached)
             {
                 DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-
-            var rootFrame = Window.Current.Content as Frame;
-
-            if (rootFrame == null)
+            if (_diContainer == null)
             {
-                rootFrame = new Frame();
-
-                rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Load state from previously suspended application
-                }
-
-                Window.Current.Content = rootFrame;
-            }
-
-            if (rootFrame.Content == null)
-            {
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                _diContainer = new ServiceContainer();
+                RegisterViewsWithDiContainer();
+                Window.Current.Content = _diContainer.GetInstance<MainPage>();
             }
             Window.Current.Activate();
+        }
+
+        private void RegisterViewsWithDiContainer()
+        {
+            _diContainer.Register(f => new MainPage(_diContainer), new PerContainerLifetime());
+            RegisterViewWithDiContainer<FlipViewWithImages>();
+        }
+
+        private void RegisterViewWithDiContainer<TView>() where TView : UserControl
+        {
+            _diContainer.Register<UserControl, TView>(typeof(TView).Name, new PerContainerLifetime());
         }
 
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
