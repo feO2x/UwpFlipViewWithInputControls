@@ -7,13 +7,22 @@
              mc:Ignorable="d"
              d:DesignHeight="1024"
              d:DesignWidth="1920">
-
-    <FlipView>
-        <FlipViewItem>
-            <a:InputControls />
-        </FlipViewItem>
-        <FlipViewItem>
-            <a:InputControls />
-        </FlipViewItem>
-    </FlipView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <FlipView Grid.RowSpan="2">
+            <FlipViewItem>
+                <a:InputControls />
+            </FlipViewItem>
+            <FlipViewItem>
+                <a:InputControls />
+            </FlipViewItem>
+        </FlipView>
+        <Border Grid.Row="0" Style="{StaticResource OverlayBorderStyle}">
+            <TextBlock Style="{StaticResource OverlayTextStyle}">When Input Controls are contained within a FlipView, the touch keyboard covers input controls like e.g. text boxes when they reside within the bottom half of the screen. They are not automatically moved to the upper half (as it is the case normally).</TextBlock>
+        </Border>
+        
+    </Grid>
 </UserControl>

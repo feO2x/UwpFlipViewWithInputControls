@@ -6,12 +6,21 @@
              mc:Ignorable="d"
              d:DesignHeight="1024"
              d:DesignWidth="1920">
-    <FlipView>
-        <Image Source="/Images/caterpillar.jpg" />
-        <Image Source="/Images/eggs.jpg" />
-        <Image Source="/Images/flowers.jpg" />
-        <Image Source="/Images/paper ship.jpg" />
-        <Image Source="/Images/pencils.jpg" />
-        <Image Source="/Images/rubik's cube.jpg" />
-    </FlipView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+        <FlipView Grid.RowSpan="2">
+            <Image Source="/Images/caterpillar.jpg" />
+            <Image Source="/Images/eggs.jpg" />
+            <Image Source="/Images/flowers.jpg" />
+            <Image Source="/Images/paper ship.jpg" />
+            <Image Source="/Images/pencils.jpg" />
+            <Image Source="/Images/rubik's cube.jpg" />
+        </FlipView>
+        <Border Grid.Row="0" Style="{StaticResource OverlayBorderStyle}">
+            <TextBlock Style="{StaticResource OverlayTextStyle}">The FlipView works just fine when it is used to display content that can only be viewed, but not edited by the user.</TextBlock>
+        </Border>
+    </Grid>
 </UserControl>

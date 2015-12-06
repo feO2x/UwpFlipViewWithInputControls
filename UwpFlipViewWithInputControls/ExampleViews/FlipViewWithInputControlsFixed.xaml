@@ -7,18 +7,26 @@
              mc:Ignorable="d"
              d:DesignHeight="1024"
              d:DesignWidth="1920">
-
-    <FlipView>
-        <FlipView.ItemsPanel>
-            <ItemsPanelTemplate>
-                <StackPanel Orientation="Horizontal" AreScrollSnapPointsRegular="True" />
-            </ItemsPanelTemplate>
-        </FlipView.ItemsPanel>
-        <FlipViewItem>
-            <a:InputControls />
-        </FlipViewItem>
-        <FlipViewItem>
-            <a:InputControls />
-        </FlipViewItem>
-    </FlipView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <FlipView Grid.RowSpan="2">
+            <FlipView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" AreScrollSnapPointsRegular="True" />
+                </ItemsPanelTemplate>
+            </FlipView.ItemsPanel>
+            <FlipViewItem>
+                <a:InputControls />
+            </FlipViewItem>
+            <FlipViewItem>
+                <a:InputControls />
+            </FlipViewItem>
+        </FlipView>
+        <Border Grid.Row="0" Style="{StaticResource OverlayBorderStyle}">
+            <TextBlock Style="{StaticResource OverlayTextStyle}">This "bug" occurs because of the VirtualizingStackPanel that is used as the items host in the FlipView. If you exchange it with a normal StackPanel, input controls are correctly scrolled when the touch keyboard fades in. Please note that you loose UI Virtualization in this case, so you'll use up more memory and the load time of the FlipView can be significantly higher.</TextBlock>
+        </Border>
+    </Grid>
 </UserControl>

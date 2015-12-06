@@ -9,4 +9,16 @@
         <Setter Property="MinWidth" Value="200" />
     </Style>
 
+    <Style x:Key="OverlayBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="#CC000000" />
+        <Setter Property="Padding" Value="16 12" />
+    </Style>
+
+    <Style x:Key="OverlayTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
 </ResourceDictionary>
