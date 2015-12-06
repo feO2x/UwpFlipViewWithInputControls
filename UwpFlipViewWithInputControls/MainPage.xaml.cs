@@ -15,7 +15,7 @@ namespace UwpFlipViewWithInputControls
             if (serviceContainer == null) throw new ArgumentNullException(nameof(serviceContainer));
 
             _serviceContainer = serviceContainer;
-            CurrentView.Content = _serviceContainer.GetInstance<UserControl>(nameof(FlipViewWithImages));
+            CurrentView.Content = _serviceContainer.GetInstance<UserControl>(nameof(ExampleViews.FlipViewWithImages));
         }
 
         public MainPage()

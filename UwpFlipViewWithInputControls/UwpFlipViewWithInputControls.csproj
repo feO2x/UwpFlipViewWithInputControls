@@ -95,7 +95,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FlipViewWithImages.xaml.cs">
+    <Compile Include="ExampleViews\ExampleViewsNamespaceMarker.cs" />
+    <Compile Include="ExampleViews\FlipViewWithImages.xaml.cs">
       <DependentUpon>FlipViewWithImages.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
@@ -130,7 +131,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="FlipViewWithImages.xaml">
+    <Page Include="ExampleViews\FlipViewWithImages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

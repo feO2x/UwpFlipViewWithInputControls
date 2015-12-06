@@ -1,6 +1,9 @@
 ﻿using LightInject;
 using System;
 using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using UwpFlipViewWithInputControls.ExampleViews;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -39,12 +42,18 @@ namespace UwpFlipViewWithInputControls
         private void RegisterViewsWithDiContainer()
         {
             _diContainer.Register(f => new MainPage(_diContainer), new PerContainerLifetime());
-            RegisterViewWithDiContainer<FlipViewWithImages>();
+            RegisterAllViewsWithinNamespace(typeof (ExampleViewsNamespaceMarker));
         }
 
-        private void RegisterViewWithDiContainer<TView>() where TView : UserControl
+        private void RegisterAllViewsWithinNamespace(Type markerType)
         {
-            _diContainer.Register<UserControl, TView>(typeof(TView).Name, new PerContainerLifetime());
+            var targetNamespace = markerType.Namespace;
+            var typeInfo = markerType.GetTypeInfo();
+            var assembly = typeInfo.Assembly;
+            foreach (var viewType in assembly.GetTypes().Where(t => t.Namespace == targetNamespace))
+            {
+                _diContainer.Register(typeof(UserControl), viewType, viewType.Name, new PerContainerLifetime());
+            }
         }
 
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
