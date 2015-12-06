@@ -95,9 +95,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Assets\InputControls.xaml.cs">
+      <DependentUpon>InputControls.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExampleViews\ExampleViewsNamespaceMarker.cs" />
     <Compile Include="ExampleViews\FlipViewWithImages.xaml.cs">
       <DependentUpon>FlipViewWithImages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\FlipViewWithInputControls.xaml.cs">
+      <DependentUpon>FlipViewWithInputControls.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -131,7 +137,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Assets\InputControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ExampleViews\FlipViewWithImages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExampleViews\FlipViewWithInputControls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -50,7 +50,8 @@ namespace UwpFlipViewWithInputControls
             var targetNamespace = markerType.Namespace;
             var typeInfo = markerType.GetTypeInfo();
             var assembly = typeInfo.Assembly;
-            foreach (var viewType in assembly.GetTypes().Where(t => t.Namespace == targetNamespace))
+            foreach (var viewType in assembly.GetTypes().Where(t => t.Namespace == targetNamespace &&
+                                                                    t != markerType))
             {
                 _diContainer.Register(typeof(UserControl), viewType, viewType.Name, new PerContainerLifetime());
             }
