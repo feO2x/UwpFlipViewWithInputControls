@@ -35,6 +35,8 @@
             <CalendarDatePicker Header="Calendar Date Picker 10" Style="{StaticResource InputControlStyle}" />
             <TextBox Header="Text Box 11" Style="{StaticResource InputControlStyle}" />
             <TextBox Header="Text Box 12" Style="{StaticResource InputControlStyle}" />
+            <TimePicker Header="Time Picker 13" Style="{StaticResource InputControlStyle}" />
+            <RichEditBox Header="Rich Edit Box 14" Style="{StaticResource InputControlStyle}" />
         </StackPanel>
     </ScrollViewer>
 </UserControl>
