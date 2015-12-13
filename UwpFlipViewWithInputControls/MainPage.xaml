@@ -10,12 +10,20 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <Button Content="Flip View with Images" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithImages" />
-            <Button Content="Flip View with Obscured Input Controls" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithInputControls" />
-            <Button Content="Fixed Flip View with Obscured Input Controls" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithInputControlsFixed" />
-            <Button Content="Form without ScrollViewer (proper keyboard dismissal)" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="KeyboardDismissWorkingProperly" />
-        </StackPanel>
+        <ScrollViewer VerticalScrollMode="Disabled"
+                      VerticalScrollBarVisibility="Disabled"
+                      HorizontalScrollMode="Enabled"
+                      HorizontalScrollBarVisibility="Auto"
+                      IsHorizontalRailEnabled="True"
+                      IsHorizontalScrollChainingEnabled="False">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Flip View with Images" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithImages" />
+                <Button Content="Flip View with Obscured Input Controls" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithInputControls" />
+                <Button Content="Fixed Flip View with Obscured Input Controls" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithInputControlsFixed" />
+                <Button Content="Form without ScrollViewer (proper keyboard dismissal)" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="KeyboardDismissWorkingProperly" />
+                <Button Content="Flip View Form and Keyboard Dismiss Problem" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithBrokenKeyboardDismiss" />
+            </StackPanel>
+        </ScrollViewer>
         <ContentControl Grid.Row="1" x:Name="CurrentView" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
     </Grid>
 </Page>

@@ -99,6 +99,9 @@
       <DependentUpon>InputControls.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExampleViews\ExampleViewsNamespaceMarker.cs" />
+    <Compile Include="ExampleViews\FlipViewWithBrokenKeyboardDismiss.xaml.cs">
+      <DependentUpon>FlipViewWithBrokenKeyboardDismiss.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExampleViews\FlipViewWithImages.xaml.cs">
       <DependentUpon>FlipViewWithImages.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Assets\InputControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExampleViews\FlipViewWithBrokenKeyboardDismiss.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
