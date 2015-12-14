@@ -5,15 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             d:DesignHeight="300"
-             d:DesignWidth="400">
-
-    <FlipView Grid.RowSpan="2">
-        <FlipViewItem>
-            <a:InputControls />
-        </FlipViewItem>
-        <FlipViewItem>
-            <a:InputControls />
-        </FlipViewItem>
-    </FlipView>
+             d:DesignHeight="1024"
+             d:DesignWidth="1920">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <FlipView Grid.RowSpan="2" Style="{StaticResource FixedFlipViewStyle}">
+            <FlipViewItem>
+                <a:InputControls />
+            </FlipViewItem>
+            <FlipViewItem>
+                <a:InputControls />
+            </FlipViewItem>
+        </FlipView>
+        <Border Grid.Row="0" Style="{StaticResource OverlayBorderStyle}">
+            <TextBlock Style="{StaticResource OverlayTextStyle}">If you put your input controls within a FlipView, then the keyboard is not dismissed properly when you hit the background. Instead, the first control of the form is focused when you tap on the background.</TextBlock>
+        </Border>
+    </Grid>
 </UserControl>

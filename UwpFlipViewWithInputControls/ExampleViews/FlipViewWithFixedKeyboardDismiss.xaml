@@ -7,13 +7,21 @@
              mc:Ignorable="d"
              d:DesignHeight="1024"
              d:DesignWidth="1920">
-
-    <FlipView Grid.RowSpan="2">
-        <FlipViewItem>
-            <a:InputControlsWithFixedScrollViewer />
-        </FlipViewItem>
-        <FlipViewItem>
-            <a:InputControlsWithFixedScrollViewer />
-        </FlipViewItem>
-    </FlipView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <FlipView Grid.RowSpan="2" Style="{StaticResource FixedFlipViewStyle}">
+            <FlipViewItem>
+                <a:InputControlsWithFixedScrollViewer />
+            </FlipViewItem>
+            <FlipViewItem>
+                <a:InputControlsWithFixedScrollViewer />
+            </FlipViewItem>
+        </FlipView>
+        <Border Grid.Row="0" Style="{StaticResource OverlayBorderStyle}">
+            <TextBlock Style="{StaticResource OverlayTextStyle}">This unwanted focus behavior can be prevented by setting IsTabStop to true on all ScrollViewers within the Element Tree that you control. By default, this value is false and that's why the ScrollViewer focuses the first child control within its scope.</TextBlock>
+        </Border>
+    </Grid>
 </UserControl>

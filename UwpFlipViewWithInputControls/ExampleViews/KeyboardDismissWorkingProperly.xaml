@@ -6,26 +6,35 @@
              mc:Ignorable="d"
              d:DesignHeight="1024"
              d:DesignWidth="1920">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
 
-    <StackPanel>
-        <TextBox Header="Text Box 1" Style="{StaticResource InputControlStyle}" />
-        <TextBox Header="Text Box 2" Style="{StaticResource InputControlStyle}" />
-        <TextBox Header="Text Box 3" Style="{StaticResource InputControlStyle}" />
-        <DatePicker Header="Date Picker 4" Style="{StaticResource InputControlStyle}" />
-        <TextBox Header="Text Box 5" Style="{StaticResource InputControlStyle}" />
-        <TextBox Header="Text Box 6" Style="{StaticResource InputControlStyle}" />
-        <ComboBox Header="Combo Box 7" Style="{StaticResource InputControlStyle}">
-            <ComboBoxItem>Choose me!</ComboBoxItem>
-            <ComboBoxItem>No me!</ComboBoxItem>
-            <ComboBoxItem>Forget it, take me!</ComboBoxItem>
-            <ComboBoxItem>Oh come on...</ComboBoxItem>
-        </ComboBox>
-        <TextBox Header="Text Box 8" Style="{StaticResource InputControlStyle}" />
-        <TextBox Header="Text Box 9" Style="{StaticResource InputControlStyle}" />
-        <CalendarDatePicker Header="Calendar Date Picker 10" Style="{StaticResource InputControlStyle}" />
-        <TextBox Header="Text Box 11" Style="{StaticResource InputControlStyle}" />
-        <TextBox Header="Text Box 12" Style="{StaticResource InputControlStyle}" />
-        <TimePicker Header="Time Picker 13" Style="{StaticResource InputControlStyle}" />
-        <RichEditBox Header="Rich Edit Box 14" Style="{StaticResource InputControlStyle}" />
-    </StackPanel>
+        <StackPanel Grid.RowSpan="2">
+            <TextBox Header="Text Box 1" Style="{StaticResource InputControlStyle}" />
+            <TextBox Header="Text Box 2" Style="{StaticResource InputControlStyle}" />
+            <TextBox Header="Text Box 3" Style="{StaticResource InputControlStyle}" />
+            <DatePicker Header="Date Picker 4" Style="{StaticResource InputControlStyle}" />
+            <TextBox Header="Text Box 5" Style="{StaticResource InputControlStyle}" />
+            <TextBox Header="Text Box 6" Style="{StaticResource InputControlStyle}" />
+            <ComboBox Header="Combo Box 7" Style="{StaticResource InputControlStyle}">
+                <ComboBoxItem>Choose me!</ComboBoxItem>
+                <ComboBoxItem>No me!</ComboBoxItem>
+                <ComboBoxItem>Forget it, take me!</ComboBoxItem>
+                <ComboBoxItem>Oh come on...</ComboBoxItem>
+            </ComboBox>
+            <TextBox Header="Text Box 8" Style="{StaticResource InputControlStyle}" />
+            <TextBox Header="Text Box 9" Style="{StaticResource InputControlStyle}" />
+            <CalendarDatePicker Header="Calendar Date Picker 10" Style="{StaticResource InputControlStyle}" />
+            <TextBox Header="Text Box 11" Style="{StaticResource InputControlStyle}" />
+            <TextBox Header="Text Box 12" Style="{StaticResource InputControlStyle}" />
+            <TimePicker Header="Time Picker 13" Style="{StaticResource InputControlStyle}" />
+            <RichEditBox Header="Rich Edit Box 14" Style="{StaticResource InputControlStyle}" />
+        </StackPanel>
+        <Border Grid.Row="0" Style="{StaticResource OverlayBorderStyle}">
+            <TextBlock Style="{StaticResource OverlayTextStyle}">If you just put input controls in a panel (e.g. a StackPanel), then the keyboard is dismissed totally fine when you tap on the form background.</TextBlock>
+        </Border>
+    </Grid>
 </UserControl>

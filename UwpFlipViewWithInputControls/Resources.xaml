@@ -20,5 +20,15 @@
         <Setter Property="FontSize" Value="20" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
+    
+    <Style x:Key="FixedFlipViewStyle" TargetType="FlipView">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" AreScrollSnapPointsRegular="True" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>
