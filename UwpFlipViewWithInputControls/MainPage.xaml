@@ -1,7 +1,6 @@
 ﻿<Page x:Class="UwpFlipViewWithInputControls.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:local="using:UwpFlipViewWithInputControls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
@@ -22,6 +21,7 @@
                 <Button Content="Fixed Flip View with Obscured Input Controls" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithInputControlsFixed" />
                 <Button Content="Form without ScrollViewer (proper keyboard dismissal)" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="KeyboardDismissWorkingProperly" />
                 <Button Content="Flip View Form and Keyboard Dismiss Problem" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithBrokenKeyboardDismiss" />
+                <Button Content="Flip View Form with Fixed Keyboard Dismiss" Style="{StaticResource ButtonStyle}" Click="ShowNewView" Tag="FlipViewWithFixedKeyboardDismiss" />
             </StackPanel>
         </ScrollViewer>
         <ContentControl Grid.Row="1" x:Name="CurrentView" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />

@@ -98,9 +98,15 @@
     <Compile Include="Assets\InputControls.xaml.cs">
       <DependentUpon>InputControls.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Assets\InputControlsWithFixedScrollViewer.xaml.cs">
+      <DependentUpon>InputControlsWithFixedScrollViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExampleViews\ExampleViewsNamespaceMarker.cs" />
     <Compile Include="ExampleViews\FlipViewWithBrokenKeyboardDismiss.xaml.cs">
       <DependentUpon>FlipViewWithBrokenKeyboardDismiss.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\FlipViewWithFixedKeyboardDismiss.xaml.cs">
+      <DependentUpon>FlipViewWithFixedKeyboardDismiss.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExampleViews\FlipViewWithImages.xaml.cs">
       <DependentUpon>FlipViewWithImages.xaml</DependentUpon>
@@ -150,7 +156,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Assets\InputControlsWithFixedScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ExampleViews\FlipViewWithBrokenKeyboardDismiss.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExampleViews\FlipViewWithFixedKeyboardDismiss.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
